@@ -2,7 +2,9 @@
 <!--
     Implement environment variables fetching
 -->
-<h1>{{ getenv "HUGO_RAPID_HOST" }}</h1>
+<script>
+    console.log('{{ getenv "HUGO_RAPID_HOST" }}')
+</script>
 <div class="center">
     <label for="exchange">Exchange:</label>
     <select id="exchange" onchange="parseDataFromSelects()">
