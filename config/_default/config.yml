@@ -59,6 +59,12 @@ cascade:
     type: docs
 
 params:
+  axios:
+    - "js/axios.min.js"
+  chart:
+    - "js/chart.js"
+  widget:
+    - "js/widget.js"
   # Expand taxonomy terms in the sidebar menu
   expandTerms: false
 

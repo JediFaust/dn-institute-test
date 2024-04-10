@@ -34,6 +34,15 @@
 <!--
     The following path's should be fixed to support native Hugo script integration
 -->
-<script src="/dn-institute/js/chart.js"></script>
-<script src="/dn-institute/js/axios.min.js"></script>
-<script src="/dn-institute/js/widget.js"></script>
+
+{{ range .Site.Params.axios }}
+    <script type="text/javascript" src="{{ . | absURL }}"></script>
+{{- end }}
+
+{{ range .Site.Params.chart }}
+    <script type="text/javascript" src="{{ . | absURL }}"></script>
+{{- end }}
+
+{{ range .Site.Params.widget }}
+    <script type="text/javascript" src="{{ . | absURL }}"></script>
+{{- end }}
