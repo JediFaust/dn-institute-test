@@ -5,13 +5,6 @@
 <script>
     const RAPID_HOST = {{ getenv "HUGO_RAPID_HOST" }}
     const RAPID_KEY = {{ getenv "HUGO_RAPID_KEY" }}
-    console.log(RAPID_HOST)
-    console.log(RAPID_KEY)
-    function fillPairs(exchange) {
-        const pairs = []
-        axios.get()
-        
-    }
 </script>
 <div class="center">
     <label for="exchange">Exchange:</label>
@@ -24,9 +17,9 @@
 
     <label for="pair">Pair:</label>
     <select id="pair" onchange="parseDataFromSelects()">
-        <!-- <option value="btc-usdt">BTC-USDT</option>
+        <option value="btc-usdt">BTC-USDT</option>
         <option value="eth-usdt">ETH-USDT</option>
-        <option value="xrp-usdt">XRP-USDT</option> -->
+        <option value="xrp-usdt">XRP-USDT</option>
     </select>
 
     <label for="metric">Metric:</label>
@@ -39,19 +32,11 @@
     </select>
 </div>
 
-<!--
-    The following path's should be fixed to support native Hugo script integration
--->
-
-<!-- {{ range .Site.Params.axios }}
-    <script type="text/javascript" src="{{ . | absURL }}"></script>
-{{- end }} -->
-
- <!-- {{ $axios := resources.Get "/js/axios.min.js" }}
+ {{ $axios := resources.Get "/js/axios.min.js" }}
 <script src="{{ $axios.Permalink }}"></script>
 
  {{ $chart := resources.Get "/js/chart.js" }}
-<script src="{{ $chart.Permalink }}"></script> -->
+<script src="{{ $chart.Permalink }}"></script>
 
  {{ $widget := resources.Get "/js/widget.js" }}
 <script type="module" src="{{ $widget.Permalink }}"></script>
