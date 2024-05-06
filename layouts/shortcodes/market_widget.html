@@ -3,7 +3,11 @@
     Implement environment variables fetching
 -->
 <script>
+    const RAPID_HOST = {{ getenv "HUGO_RAPID_HOST" }}
+    const RAPID_KEY = {{ getenv "HUGO_RAPID_KEY" }}
     console.log('Here it is: ', '{{ getenv "HUGO_RAPID_HOST" }}')
+    console.log(RAPID_HOST)
+    console.log(RAPID_KEY)
 </script>
 <div class="center">
     <label for="exchange">Exchange:</label>
