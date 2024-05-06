@@ -60,11 +60,11 @@ cascade:
 
 params:
   axios:
-    - "static/js/axios.min.js"
+    - "/static/js/axios.min.js"
   chart:
-    - "static/js/chart.js"
+    - "/static/js/chart.js"
   widget:
-    - "static/js/widget.js"
+    - "/static/js/widget.js"
   # Expand taxonomy terms in the sidebar menu
   expandTerms: false
 
