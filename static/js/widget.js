@@ -6,8 +6,8 @@ const options = {
     sort: 'asc'
   },
   headers: {
-    'X-RapidAPI-Key': process.env.RAPID_KEY,
-    'X-RapidAPI-Host': process.env.RAPID_HOST
+    'X-RapidAPI-Key': RAPID_KEY,
+    'X-RapidAPI-Host': RAPID_HOST
   }
 };
 
