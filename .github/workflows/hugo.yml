@@ -39,9 +39,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
-      RAPID_HOST: ${{ secrets.RAPID_HOST }}
-      RAPID_KEY: ${{ secrets.RAPID_KEY }}
-      HUGO_RAPID_HOST: ${{ secrets.HUGO_RAPID_HOST }}
+      RAPID_HOST: ${{ secrets.HUGO_RAPID_HOST }}
+      RAPID_KEY: ${{ secrets.HUGO_RAPID_KEY }}
+      # HUGO_RAPID_HOST: ${{ secrets.HUGO_RAPID_HOST }}
+      # HUGO_RAPID_HOST: ${{ secrets.HUGO_RAPID_HOST }}
     steps:
       - name: Install Hugo CLI
         run: |
