@@ -1,3 +1,6 @@
+const axios = require('axios')
+const Chart = require('chart.js/auto')
+
 const options = {
   method: 'GET',
   url: 'https://crypto-market-health.p.rapidapi.com/metrics',
