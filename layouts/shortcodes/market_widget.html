@@ -42,9 +42,17 @@
 <!-- {{ range .Site.Params.axios }}
     <script type="text/javascript" src="{{ . | absURL }}"></script>
 {{- end }} -->
- {{ $axios := resources.Get "js/axios.min.js" }}
+{{ range .Site.Params.axios }}
+ {{ $axios := resources.Get "{{ . | absURL }}" }}
 <script src="{{ $axios.Permalink }}"></script>
- {{ $chart := resources.Get "js/chart.js" }}
+{{- end }}
+
+{{ range .Site.Params.chart }}
+ {{ $chart := resources.Get "{{ . | absURL }}" }}
 <script src="{{ $chart.Permalink }}"></script>
- {{ $widget := resources.Get "js/widget.js" }}
+{{- end }}
+
+{{ range .Site.Params.widget }}
+ {{ $widget := resources.Get "{{ . | absURL }}" }}
 <script src="{{ $widget.Permalink }}"></script>
+{{- end }}
