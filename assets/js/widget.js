@@ -225,8 +225,14 @@ function createFirstDigitDistributionData(metricsData) {
 
   return {
     options: {
+      interaction: {
+        intersect: false,
+      },
       scales: {
         x: {
+          stacked: true
+        },
+        y: {
           stacked: true
         }
       }
