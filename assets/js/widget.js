@@ -226,7 +226,7 @@ function createFirstDigitDistributionData(metricsData) {
   return {
     options: {
       scales: {
-        y: {
+        x: {
           stacked: true
         }
       }
