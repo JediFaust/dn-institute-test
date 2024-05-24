@@ -225,6 +225,11 @@ function createFirstDigitDistributionData(metricsData) {
 
   return {
     options: {
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
       scales: {
         y: {
           stacked: true
@@ -237,12 +242,14 @@ function createFirstDigitDistributionData(metricsData) {
         {
           label: "First Digit Distribution",
           data: fddData,
+          type: "bar",
           backgroundColor: 'rgb(255, 165, 0)',
           stack: "Stack 1"
         },
         {
           label: "Expected First Digit Distribution",
           data: expectedFdd,
+          type: "bar",
           backgroundColor: 'rgb(255, 200, 60)',
           stack: "Stack 2"
         }
