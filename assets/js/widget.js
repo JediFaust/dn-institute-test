@@ -173,7 +173,7 @@ function createTimesOfTradeData(metricsData) {
           tention: 0.1
         },
         {
-          label: "Aggregated Trade Frequencies per Second Over All Records",
+          label: "Trade Frequencies per Second Aggregated Over the Last 7 Days",
           type: "bar",
           data: timesOfTradeData,
           backgroundColor: 'rgb(0, 128, 0)',
@@ -208,13 +208,29 @@ function createVolumeDistributionData(metricsData) {
 
 function createFirstDigitDistributionData(metricsData) {
   let fddData = new Array(9).fill(0);
+  let totalFDD = 0;
   for (let i = 0; i < metricsData.length; i++) {
     for (let j = 0; j < 10; j++) {
-      fddData[j] += metricsData[i].firstdigitdist[String(j + 1)];
+      fdddata[j] += metricsdata[i].firstdigitdist[string(j + 1)];
+      totalFDD += metricsdata[i].firstdigitdist[string(j + 1)];
     }
   }
 
+  // Expected FDD data
+  let expectedFddPercentage = [301, 176, 125, 97, 79, 67, 58, 51, 46];
+  let expectedFdd = new Array(9).fill(0);
+  for (let i = 0; i < 10; i++) {
+    expectedFdd[i] = (totalFDD * expectedFddPercentage[i]) / 1000;
+  }
+
   return {
+    options: {
+      scales: {
+        y: {
+          stacked: true
+        }
+      }
+    },
     data: {
       labels: Array.from({ length: 9 }, (_, i) => i + 1),
       datasets: [
@@ -223,6 +239,14 @@ function createFirstDigitDistributionData(metricsData) {
           type: "bar",
           data: fddData,
           backgroundColor: 'rgb(255, 165, 0)',
+          stack: "Stack 1"
+        },
+        {
+          label: "Expected First Digit Distribution",
+          type: "bar",
+          data: expectedFdd,
+          backgroundColor: 'rgb(255, 200, 60)',
+          stack: "Stack 1"
         }
       ]
     }
