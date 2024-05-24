@@ -211,8 +211,8 @@ function createFirstDigitDistributionData(metricsData) {
   let totalFDD = 0;
   for (let i = 0; i < metricsData.length; i++) {
     for (let j = 0; j < 10; j++) {
-      fdddata[j] += metricsdata[i].firstdigitdist[string(j + 1)];
-      totalFDD += metricsdata[i].firstdigitdist[string(j + 1)];
+      fddData[j] += metricsData[i].firstdigitdist[string(j + 1)];
+      totalFDD += metricsData[i].firstdigitdist[string(j + 1)];
     }
   }
 
@@ -225,6 +225,11 @@ function createFirstDigitDistributionData(metricsData) {
 
   return {
     options: {
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
       interaction: {
         intersect: false,
       },
@@ -252,7 +257,7 @@ function createFirstDigitDistributionData(metricsData) {
           type: "bar",
           data: expectedFdd,
           backgroundColor: 'rgb(255, 200, 60)',
-          stack: "Stack 1"
+          stack: "Stack 2"
         }
       ]
     }
