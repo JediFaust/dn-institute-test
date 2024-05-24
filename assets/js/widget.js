@@ -211,8 +211,8 @@ function createFirstDigitDistributionData(metricsData) {
   let totalFDD = 0;
   for (let i = 0; i < metricsData.length; i++) {
     for (let j = 0; j < 10; j++) {
-      fddData[j] += metricsData[i].firstdigitdist[string(j + 1)];
-      totalFDD += metricsData[i].firstdigitdist[string(j + 1)];
+      fddData[j] += metricsData[i].firstdigitdist[String(j + 1)];
+      totalFDD += metricsData[i].firstdigitdist[String(j + 1)];
     }
   }
 
