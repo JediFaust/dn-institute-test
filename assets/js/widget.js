@@ -218,25 +218,14 @@ function createFirstDigitDistributionData(metricsData) {
 
   // Expected FDD data
   let expectedFddPercentage = [301, 176, 125, 97, 79, 67, 58, 51, 46];
-  let expectedFdd = new Array(9).fill(0);
+  let expectedFdd = [];
   for (let i = 0; i < 10; i++) {
-    expectedFdd[i] = (totalFDD * expectedFddPercentage[i]) / 1000;
+    expectedFdd.push((totalFDD * expectedFddPercentage[i]) / 1000);
   }
 
   return {
     options: {
-      elements: {
-        point: {
-          radius: 0
-        }
-      },
-      interaction: {
-        intersect: false,
-      },
       scales: {
-        x: {
-          stacked: true
-        },
         y: {
           stacked: true
         }
@@ -247,14 +236,12 @@ function createFirstDigitDistributionData(metricsData) {
       datasets: [
         {
           label: "First Digit Distribution",
-          type: "bar",
           data: fddData,
           backgroundColor: 'rgb(255, 165, 0)',
           stack: "Stack 1"
         },
         {
           label: "Expected First Digit Distribution",
-          type: "bar",
           data: expectedFdd,
           backgroundColor: 'rgb(255, 200, 60)',
           stack: "Stack 2"
