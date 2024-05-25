@@ -223,6 +223,9 @@ function createFirstDigitDistributionData(metricsData) {
     expectedFdd.push((totalFDD * expectedFddPercentage[i]) / 1000);
   }
 
+  console.log('Expected:', expectedFdd)
+  console.log('Total:', totalFDD)
+
   return {
     options: {
       elements: {
