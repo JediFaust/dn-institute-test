@@ -215,9 +215,6 @@ function createFirstDigitDistributionData(metricsData) {
       if (currentData === undefined) { currentData = 0; }
       fddData[j] += currentData;
       totalFDD += currentData;
-      console.log('fdd:', fddData[j])
-      console.log('current:', currentData)
-      console.log('j:', j, String(j + 1))
     }
   }
 
@@ -227,9 +224,6 @@ function createFirstDigitDistributionData(metricsData) {
   for (let i = 0; i < 10; i++) {
     expectedFdd.push((totalFDD * expectedFddPercentage[i]) / 1000);
   }
-
-  console.log('Expected:', expectedFdd)
-  console.log('Total:', totalFDD)
 
   return {
     options: {
@@ -258,7 +252,7 @@ function createFirstDigitDistributionData(metricsData) {
           label: "Expected First Digit Distribution",
           data: expectedFdd,
           type: "bar",
-          backgroundColor: 'rgb(255, 200, 60)',
+          backgroundColor: 'rgb(68, 147, 245)',
           stack: "Stack 2"
         }
       ]
