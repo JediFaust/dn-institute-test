@@ -186,9 +186,10 @@ function createTimesOfTradeData(metricsData) {
 function createVolumeDistributionData(metricsData) {
   let volumeBins = new Array(100).fill(0);
   for (let i = 0; i < volumeBins.length; i++) {
-    for (let j = 0; j < metricsData.length; j++) {
-      volumeBins[i] += metricsData[j].volumedist[i][0] + metricsData[j].volumedist[i][1];
-    }
+      volumeBins[i] += metricsData[0].volumedist[i][0] + metricsData[0].volumedist[i][1];
+    // for (let j = 0; j < metricsData.length; j++) {
+      // volumeBins[i] += metricsData[j].volumedist[i][0] + metricsData[j].volumedist[i][1];
+    // }
   }
 
   return {
@@ -216,12 +217,12 @@ function createFirstDigitDistributionData(metricsData) {
       fddData[j] += currentData;
       totalFDD += currentData;
       console.log('fdd:', fddData[j])
-      console.log('metrics:', metricsData[i].firstdigitdist[String(j + 1)])
+      console.log('current:', currentData)
       console.log('j:', j, String(j + 1))
     }
   }
 
-  // Expected FDD data
+  // Expected FDD data calculation
   let expectedFddPercentage = [301, 176, 125, 97, 79, 67, 58, 51, 46];
   let expectedFdd = [];
   for (let i = 0; i < 10; i++) {
