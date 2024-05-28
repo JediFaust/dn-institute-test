@@ -186,10 +186,9 @@ function createTimesOfTradeData(metricsData) {
 function createVolumeDistributionData(metricsData) {
   let volumeBins = new Array(100).fill(0);
   for (let i = 0; i < volumeBins.length; i++) {
-      volumeBins[i] += metricsData[0].volumedist[i][0] + metricsData[0].volumedist[i][1];
-    // for (let j = 0; j < metricsData.length; j++) {
-      // volumeBins[i] += metricsData[j].volumedist[i][0] + metricsData[j].volumedist[i][1];
-    // }
+    for (let j = 0; j < metricsData.length; j++) {
+      volumeBins[i] += metricsData[j].volumedist[i][1];
+    }
   }
 
   return {
